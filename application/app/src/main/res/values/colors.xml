@@ -5,4 +5,21 @@
     <color name="colorAccent">#D81B60</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <color name="red1">#970300</color>
+    <color name="cream">#cff3fd61</color>
+    <color name="secondPage">#00838F</color>
+    <color name="text">#ffffff</color>
+    <color name="text_two">#94ffffff</color>
+    <color name="green1">#940ce61f</color>
+    <color name="background">#070a0f</color>
+    <color name="fab">#00bbda</color>
+    <color name="white">#ffffff</color>
+    <color name="blue1">#414863</color>
+    <color name="lblue">#027d9f</color>
+    <color name="signupColor">#066e8a</color>
+    <color name="red">@android:color/holo_red_dark</color>
+    <color name="green">@android:color/holo_green_dark</color>
+    <color name="blue">@android:color/holo_blue_dark</color>
+    <color name="yellow">@android:color/holo_orange_dark</color>
 </resources>
