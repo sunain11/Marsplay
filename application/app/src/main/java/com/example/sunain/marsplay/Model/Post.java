@@ -19,7 +19,6 @@ public class Post
     public Post(String key, String auth, String title, String content, List<String> uriList)
     {
         this.key=key;
-
         this.auth=auth;
         this.title=title;
         this.content=content;

@@ -171,6 +171,11 @@ public class UploadProductActivity extends AppCompatActivity {
 
     private void startupload()
     {
+        if(!new Utils(getApplicationContext()).isNetworkAvailable())
+        {
+            Toasty.warning(getApplicationContext(),"Oops! not internet",Toast.LENGTH_LONG).show();
+            return;
+        }
         storageReference = FirebaseStorage.getInstance().getReference();
         result_uri_list=new ArrayList<>();
         progressDialog.setTitle("Uploading image "+1+"/"+uriList.size());

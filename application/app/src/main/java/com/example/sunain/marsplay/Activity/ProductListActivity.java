@@ -106,6 +106,11 @@ public class ProductListActivity extends AppCompatActivity {
 
     private void preparePosts()
     {
+        if(!new Utils(getApplicationContext()).isNetworkAvailable())
+        {
+            Toasty.warning(getApplicationContext(),"Oops! not internet",Toast.LENGTH_LONG).show();
+            return;
+        }
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading Posts");
         progressDialog.setCanceledOnTouchOutside(false);

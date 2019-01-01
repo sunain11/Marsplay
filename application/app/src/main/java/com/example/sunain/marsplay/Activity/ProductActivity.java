@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ToxicBakery.viewpager.transforms.CubeOutTransformer;
 import com.example.sunain.marsplay.Adapter.ImageAdapter;
@@ -22,6 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.robohorse.pagerbullet.PagerBullet;
 
 import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 public class ProductActivity extends AppCompatActivity {
 
@@ -38,6 +41,11 @@ public class ProductActivity extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         add_pager_func();
         String key=getIntent().getExtras().getString("key");
+        if(!new Utils(getApplicationContext()).isNetworkAvailable())
+        {
+            Toasty.warning(getApplicationContext(),"Oops! not internet",Toast.LENGTH_LONG).show();
+            return;
+        }
         FirebaseDatabase.getInstance().getReference("Marsplay/All/"+Utils.encodeEmail(mAuth.getCurrentUser().getEmail())+"/")
                 .addValueEventListener(new ValueEventListener() {
             @Override
